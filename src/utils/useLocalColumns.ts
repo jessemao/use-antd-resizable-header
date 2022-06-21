@@ -35,10 +35,10 @@ function useLocalColumns<T extends ColumnOriginType<T>>({
         ...col,
         width:
           (localResizableColumns as T[])?.find((item, j) => {
-            if (item.dataIndex && col.dataIndex && item.dataIndex === col.dataIndex) {
+            if (item.key && col.key && item.key === col.key) {
               return true;
             }
-            if (item.key && col.key && item.key === col.key) {
+            if (item.dataIndex && col.dataIndex && item.dataIndex === col.dataIndex) {
               return true;
             }
             if (i === j && !col.dataIndex && !col.key) {
